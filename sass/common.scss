@@ -1,74 +1,365 @@
 @import "base";
-// =======Sprites
-// .whatever{
-// 	@include sized-sprite($icons, badge_hit);
-// 	@include retina{
-// 		@include sized-sprite($icons, badge_new);
-// 	}
-// }
-// =======animation example
-// @include keyframes(rotate) {
-//    from {
-//       @include rotate(0);
-//    }
-//    to {
-//       @include rotate(360);
-//    }
-// }
-// body:hover{
-// 	@include animation(rotate 200s linear infinite);
-// }
-// ========gradient example
-// body{
-// @include background-image(linear-gradient(#232323, #5c5c5c));
-// }
-
-
-
 *{margin:0;padding:0;-webkit-text-size-adjust: none; }
-img{@extend %gray;}
+//img{@extend %gray;}
+html,body{height: 100%; }
 body{
 	font: {
-	    family: Arial,sans-serif;
-	    weight: normal;
-	    size: 12px;
+		family: Arial,sans-serif;
+		weight: normal;
+		size: 12px;
 	  	}
-	line-height:1.4;
+	line-height:1.2;
 }
 // resets
 a img,fieldset{
 	border:none;
 	}
 a{
-	color:#00919e;
+	color:#017ecb;
 	&:hover{
 		text-decoration:none;
 	}
 }
-// common styles, these could be attached to any block with "@extend %wyswyg;"
-%wyswyg{
-   p{
-      margin-bottom: 1em;
-   }
-   ul,ol{
-      margin: 1em 2em;
-      list-style: disc;
-   }
-   ol{
-      list-style: decimal;
-   }
-   blockquote{
-      margin: 1em 2em;
-   }
-   table{
-   	border-spacing: 0;
-   	border-collapse: collapse;
-   	width: 100%;
-      td{
-         border: 1px solid #ccc;
-         padding: 5px;
-      }
-   }
+%social_btn-min{
+	float: left;
+	@extend %hide-text;
+	margin-right: 3px;
 }
+%social_btn{
+	float: left;
+	@extend %hide-text;
+	margin-right: 7px;
+}
+.inner{
+	margin: 0 auto;
+	width: 880px;
+	
+}
+.header{
+	width: 100%;
+	height: 80px;
+	position: absolute;
+	top:0;
+	left:0;
+	z-index: 2;
+	.header__holder{
+		width: 880px;
+		margin: 0 auto;
+		height: 80px;
+	}
+	.logo-holder{
+		float: left;
+		text-align: center;
+		margin: 3px 0 0 9px;
+		span{
+			color: #001c41;
+			font-size: 12px;
+			display: block;
+		}
+	}
+	.logo{
+		display: block;
+		margin-bottom: 6px;
+		@include sized-sprite($icons, 'logo');
+		@extend %hide-text;
+		a{
+			height: 100%;
+			display: block;
+		}
+	}
+	.nav{
+		float: left;
+		margin: 12px 0 0 7px;
+		li{
+			font-size: 14px;
+			color: #4c4c4c; 
+			float: left;
+			list-style: none;
+			margin: 0 15px 0 16px; 
+			line-height: 1.4;
+		}
+		a{
+			color: #4c4c4c; 
+		}
+	}
+	.sign{
+		float: right;
+		margin: 11px 6px 0 0;
+	}
+	.sign__btn{
+		float: left;
+		border-radius:4px;
+		text-decoration: none;
+		height: 21px;
+		line-height: 21px;
+		color:#fff;
+		padding: 0 11px;
+		margin: 0 4px 0 0;
+		@include background-image(linear-gradient(#385c8d 0%, #2d507f 25%, #0e2b53 75%, #021e43 100%));
+	}
 
+	.vk_small{
+		@include sized-sprite($icons, 'vk1');
+		@extend %social_btn-min;
+	}
+	.tw_small{
+		@include sized-sprite($icons, 'tw1');
+		@extend %social_btn-min;
+	}
+	.fb_small{
+		@include sized-sprite($icons, 'fb1');
+		@extend %social_btn-min;
+	}
+}
+.win1{
+	background: url(../img/bg_blue.jpg);
+	min-height: 100%; 
+}
+%h1{
+	font-size: 24px;
+	font-weight: normal;
+	color: #0a274e;
+	text-align: center;
+	text-shadow:1px 1px 0 rgba(white,.44);
+	margin-bottom: 21px;
+}
+.input{
+	font-size: 18px;
+	color:#959494;
+	border-radius:4px;
+	border:1px soild #fff;
+	background: #fff;
+	box-shadow:1px 2px 1px rgba(0,0,0,.12) inset, 1px 2px 3px rgba(0,0,0,.14);
+	height: 33px;
+}
+.btn{
 
+}
+.win{
+	min-height: 100%; 
+	position: relative;
+	.inner{padding: 95px 0 108px;}
+	h1{@extend %h1;}
+	.companies-location{
+		color: #313131;
+		font-size: 18px;
+		margin:0 0 30px 36px; 
+		a{
+			color: #313131;
+			text-decoration: none;
+			border-bottom:1px dotted;
+		}
+		.input{display: none;}
+	}
+	.bullet{
+		height: 9px;
+		width: 9px;
+		display: inline-block;
+		border-radius:50%;
+		border:1px solid #000;
+		margin-right: 10px;
+	}
+	.bullet_green{
+		@extend .bullet;
+		border-color:#428d00;
+		background: #388202;
+		@include background(linear-gradient(#69d10c 0%, #61c40b 19%, #388202 76%, #2d6f00 100%));
+	}
+	.input-list{
+		margin: 0 0 0 22px;
+		display: inline-block; 
+	}
+	.inp-arr{
+		float: left;
+		margin-left: -9px;
+		position: relative;
+		.hint{
+			display: none;
+			background:rgba(110,110,110,.4);
+			font-size: 14px;
+			color:#fff;
+			min-width: 140px;
+			padding: 4px 20px;
+			position: absolute;
+			left: -2px;
+			bottom:64px;
+			border-radius:3px;
+			&:after{
+				content:'';
+				position: absolute;
+				@include sized-sprite($icons, 'hint-arr');
+				bottom:-10px;
+				left:15px;
+				cursor: default;
+			}
+		}
+	}
+	.inp-arr_l{
+		float: left;
+		@include sized-sprite($icons, 'inp-l');
+	}
+	.inp-arr_c{
+		float: left;
+		background: url(../img/inp-c.png);
+		height: 45px;
+		input{
+			border:0;
+			height: 39px;
+			margin: 1px 0 0 0;
+			padding-left: 4px;
+			background: transparent; 
+			float: left;
+			font-size: 18px;
+			color:#959494;
+		}
+	}
+	.inp-arr_r{
+		float: left;
+		@include sized-sprite($icons, 'inp-r');
+	}
+	.inp-arr_first{
+		margin-left: 0;
+		.inp-arr_l{
+			@include sized-sprite($icons, 'inp-l_first');
+		}
+		.inp-arr_c input{
+			margin-left: -5px;
+			padding-left: 0;
+		}
+	}
+	.inp-arr_err{
+		.inp-arr_l{
+			@include sized-sprite($icons, 'inp-l_sel');
+		}
+		.inp-arr_c{
+			background: url(../img/inp-c_sel.png);
+		}
+		.inp-arr_r{
+			@include sized-sprite($icons, 'inp-r_sel');
+		}
+	}
+	.input_mark{width: 96px;}
+	.input_model{width: 111px;}
+	.input_year{width: 68px;}
+	.input_modification{width: 161px;}
+	.btn-arr{
+		float: left;
+		margin-left: -12px;
+		line-height: 39px;
+		.btn-arr_l{
+			float: left;
+			@include sized-sprite($icons, 'btn-l');
+					}
+		.btn-arr_c{
+			float: left;
+			background: url(../img/btn-c.png);
+			color: #fff;
+			font-size: 18px;
+			height: 45px;
+			padding: 0 16px;
+				
+		}
+		.btn-arr_r{
+			float: left;
+			@include sized-sprite($icons, 'btn-r');
+		}
+	}
+}
+.brand{
+	font-size: 18px;
+	margin: 30px 0 0 40px;
+	a{
+		color:#112f58;
+		text-decoration: none;
+	}
+	.brand__nav{
+		display: inline-block;
+		box-shadow:0 3px 0 #b4d9f3 inset;
+		line-height: 1.3;
+		margin-bottom: 10px;
+		li{
+			list-style: none;
+			float: left;
+			margin-left: 10px;
+			&:first-child{margin-left: 0;}
+		}
+		a{
+			display: block;
+			border-top:3px solid;
+			&:hover{
+				color: #cf6803;
+				border-color: #cf6803;
+			}
+		}
+	}
+	.brand__content{
+		li{
+			list-style: none;
+			margin-bottom: 8px;
+		}
+		a{
+			border-bottom:1px dotted;
+			&:hover{border-color:transparent;}
+		}
+	}
+}
+.footer{
+	background: #e9ecef;
+	width: 100%;
+	left: 0;
+	bottom: 0;
+	height: 98px;
+	margin-top: -98px; 
+	z-index: 2;
+	position: absolute;
+	.footer__social{
+		float: left;
+		margin: 46px 102px 0 10px;
+	}
+	.footer__links{
+		float: left;
+		margin: 18px 75px 0 0;
+		li{
+			list-style: none;
+			font-size: 12px;
+			color:#606060;
+			margin-bottom: 10px;
+		}
+		a{
+			color:#606060;
+		}
+	}
+}
+.vk{
+	@include sized-sprite($icons, 'vk2');
+	@extend %social_btn;
+}
+.tw{
+	@include sized-sprite($icons, 'tw2');
+	@extend %social_btn;
+}
+.fb{
+	@include sized-sprite($icons, 'fb2');
+	@extend %social_btn;
+}
+.popup-wrap{
+	position: fixed;
+	top:0;
+	left: 0;
+	height: 100%;
+	width: 100%;
+	background: rgba(0,0,0,.0);
+	z-index: 100; 
+}
+.popup{
+	position: absolute;
+	top:50%;
+	left:50%;
+	z-index: 150;
+	background: #bdd2e5;
+	width: 420px;
+	height: 470px;
+	margin: -235px 0 0 -210px;
+	box-shadow:6px 8px 10px rgba(95,96,96,.3);
+	h1{@extend %h1;}
+}
