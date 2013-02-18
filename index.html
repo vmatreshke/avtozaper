@@ -3,7 +3,7 @@
 <!--[if gt IE 8]><!--><html lang="ru-RU"><!--<![endif]-->
 <head>
 	<meta charset="utf-8">
-	<title>Template</title>		
+	<title>Template</title>
 	<link rel="stylesheet" media="screen" href="css/screen.css" >
 </head>
 <body>
@@ -33,7 +33,7 @@
 
 <!-- BEGIN  out-->
 <!--<div class="out">-->
-<div class="win win1">
+<div class="win win1" style="display:none;">
 	<div class="inner">
 		<h1>Хватит терять время на поиск и обзвон<br>
 		Заполни заявку и магазины сами сделают предложения!</h1>
@@ -118,8 +118,59 @@
 		</div>
 	</div>
 </div>
-<div class="win2" style="display:none;"></div>
-<div class="win3" style="display:none;"></div>
+<div class="win win2" style="display:none;">
+	<div class="inner">
+		<div class="order">
+			<a href="#" class="return"><span class="return-arr"></span>Вернуться к выбору авто</a>
+			<form action="#">
+				<h1>Моя заявка:</h1>
+				<strong class="order__model-name">Audi A4 Wagon 2.7D (163Hp) FWD AT </strong>
+				<div class="row">
+					<input type="text" class="input" placeholder="Название запчасти">
+					<div class="input-file"><span>прикрепить фото</span><input type="file" class="file"></div>
+					<div class="hint_l">Наберите нужную Вам запчасть</div>
+				</div>
+				<div class="row_add">
+					Добавить еще <a href="#" class="add-spare">запчасти</a> <a href="#" class="add-vin">VIN</a>
+					<div class="b-a">
+						<input type="checkbox" id="check-02" class="check">
+						<label for="check-02">Можно б/у</label>
+					</div>
+				</div>
+				<h2>Контакты:</h2>
+				<div class="row">
+					<input type="text" class="input" placeholder="Ваше имя">
+					<div class="hint_l">Введите Ваше имя</div>
+				</div>
+				<div class="row">
+					<input type="text" class="input" placeholder="Ваша эл. почта">
+					<div class="hint_l">Введите Вашу почту</div>
+					<div class="input_comment">При неверном указании e-mail, Вы не сможете получать предложения</div>
+				</div>
+				<div class="row">
+					<input type="text" class="input" placeholder="Ваш город">
+					<div class="hint_l">Укажите Ваш город</div>
+				</div>
+				<div class="row_btn_r">
+					<input type="submit" class="btn_get" value="Получить предложения">
+				</div>
+			</form>
+		</div>
+	</div>
+</div>
+<div class="win win3" style="display:block;">
+	<div class="inner">
+		<div class="phone-num">
+			<h1>Запрос успешно разослан в магазины.<br>
+			Предложения Вы получите на указанные контактные данные.</h1>
+			<p>Хотите получать предложения в виде СМС на телефон?</p>
+			<form action="#">
+				<input type="text" class="input" placeholder="Введите свой номер телефона">
+				<input type="submit" value="Отправить" class="btn">
+			</form>
+		</div>
+	</div>
+</div>
 <!--</div>-->
 <!-- END out-->
 
@@ -145,10 +196,30 @@
 </div>
 <!-- END footer -->
 
-<div class="popup-wrap"></div>
-<div class="popup">
+<div class="popup-wrap" style="display:none;"></div>
+<div class="popup" style="display:none;">
 	<h1>Войти</h1>
-	<form action="#"></form>
+	<form action="#">
+		<div class="row">
+			<input type="text" class="input" placeholder="Логин">
+		</div>
+		<div class="row">
+			<input type="text" class="input" placeholder="Пароль">
+		</div>
+		<div class="row_check">
+			<input type="checkbox" class="check" id="check-01">
+			<label for="check-01">Запомнить меня</label>
+			<a href="#" class="forgot-pass">Забыли пароль?</a>
+		</div>
+		<input type="submit" class="btn" value="Войти">
+		<p>Войти при помощи</p>
+		<div class="social_r">
+			<a href="#" class="tw_r">twitter</a>
+			<a href="#" class="vk_r">vkontakte</a>
+			<a href="#" class="fb_r">facebook</a>
+		</div>
+		<a href="#" class="reg-link">Зарегистрироваться</a>
+	</form>
 </div>
 </body>
 </html>
