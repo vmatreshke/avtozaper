@@ -180,6 +180,7 @@ a{
 		color: #313131;
 		font-size: 18px;
 		margin:0 0 30px 36px;
+		line-height: 35px;
 		a{
 			color: #313131;
 			@extend %link-dotted;
@@ -252,6 +253,11 @@ a{
 		.inp-arr_r{
 			@include sized-sprite($icons, 'inp-r_sel');
 		}
+		&.inp-arr_first{
+			.inp-arr_l{
+				@include sized-sprite($icons, 'inp-l_first_sel');
+			}
+		}
 	}
 	.input_mark{width: 96px;}
 	.input_model{width: 111px;}
@@ -260,23 +266,18 @@ a{
 	.btn-arr{
 		float: left;
 		margin-left: -12px;
-		line-height: 39px;
-		.btn-arr_l{
-			float: left;
-			@include sized-sprite($icons, 'btn-l');
-					}
-		.btn-arr_c{
-			float: left;
-			background: url(../img/btn-c.png);
-			color: #fff;
-			font-size: 18px;
-			height: 45px;
-			padding: 0 16px;
-		}
-		.btn-arr_r{
-			float: left;
-			@include sized-sprite($icons, 'btn-r');
-		}
+		padding-bottom: 6px;
+		border:0;
+		background: none;
+		color: #fff;
+		font-size: 18px;
+		@include sized-sprite($icons, 'btn');
+		cursor: pointer;
+		outline:none;
+	}
+	.btn_gray{
+		@extend %gray;
+		cursor: default;
 	}
 	%hint{
 		display: none;
