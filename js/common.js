@@ -39,18 +39,16 @@ $(document).ready(function() {
 	});
 
 	$('.location-name').click(function(){
-		$(this).hide().next('input').val($(this).html()).show();
+		$(this).hide().next().children('input').val($(this).html()).show();
+	});
+	$('.location-edit .input').keyup(function(){
+		sit = $(this).val().length;
+		if (sit >= 3) {
+			$('.location-list').fadeIn(500);
+		};
+	});
+	$('.location-edit .input').blur(function() {
+		$('.location-list').fadeOut(500);
 	});
 
-	/*$('.btn-arr').click(function(){
-		var flag = 0;
-		$('.inp-arr_c input').each(function (i) {
-			if ($(this).val() == "") {
-				$(this).parent().parent('.inp-arr').addClass('inp-arr_err');
-				flag = 1;
-			}
-			else $(this).parent().parent('.inp-arr').removeClass('inp-arr_err');
-		});
-		if (flag == 0) $(this).removeClass('btn_gray');
-	});*/
 });

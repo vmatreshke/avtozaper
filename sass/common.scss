@@ -185,7 +185,35 @@ a{
 			color: #313131;
 			@extend %link-dotted;
 		}
-		.input{display: none;}
+		.location-edit{
+			display: inline-block;
+			position: relative;
+			.location-list{
+				display: none;
+				border-radius:5px;
+				position: absolute;
+				top:100%;
+				left:0;
+				width: 100%;
+				border-radius:5px;
+				border:1px solid #fff;
+				background: #fff;
+				z-index: 50;
+				box-shadow:1px 2px 1px rgba(0,0,0,.12) inset, 1px 2px 3px rgba(0,0,0,.14);
+				li{
+					list-style: none;
+					padding: 0 12px;
+					font-size: 14px;
+					color: #393939;
+					cursor: pointer;
+					&:hover{
+						background: rgba(0,0,0,.07);
+					}
+				}
+
+			}
+			.input{display: none;}
+		}
 	}
 	.bullet{
 		height: 9px;
